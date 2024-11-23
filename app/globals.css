@@ -3,19 +3,65 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--color-primary-500: 0 132 255;
+	--color-primary-300: 64 163 255;
+	--color-button: 0 132 255;
+	--color-cta: 0 132 255;
+	--color-background-primary: 238 238 238;
+	--color-background-secondary: 231 231 231;
+	--color-background-loading: 120 120 120;
+	--color-text-primary: 0 0 0;
+	--color-text-secondary: 50 50 50;
+	--color-border: 120 120 120;
+	--color-success: 100 200 100;
+	--color-error: 200 100 100;
+
+	--transition-duration-default: 300ms;
+
+	background-color: rgb(var(--color-background-primary));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 64px;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.6rem;
+}
+
+input,
+textarea {
+	outline: none;
+}
+
+.click-animation-element {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	opacity: 1;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	transition: opacity 0.3s;
+	animation: clickAnimationPulse 0.3s forwards;
+}
+
+@keyframes clickAnimationPulse {
+	from {
+		width: 0;
+		height: 0;
+	}
+	to {
+		width: var(--click-animation-pulse-size);
+		height: var(--click-animation-pulse-size);
+	}
 }
