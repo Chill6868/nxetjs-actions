@@ -9,7 +9,7 @@ import ExampleSwiper from "./components/custom/ExampleSwiper";
 export default function Home() {
 	return (
 		<main className="bg-slate-800 h-[300vh]">
-			<p className="text-white text-xl">home page</p>
+			<p className="text-white text-xl">home page v1.2</p>
 			<Button backgroundClassName="bg-black" />
 			<Button>aha123ojkfdnaoifnwaiofwai</Button>
 			<Button formSendClass="form-contact-send" />
